@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AddContext } from "../app/page";
 import Button from "./Button";
 
 const ToolBar = () => {
-  const [task, setTask] = useState();
+  const { task, setTask } = useContext(AddContext);
   return (
     <>
       <input

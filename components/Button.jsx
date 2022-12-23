@@ -1,9 +1,9 @@
 "use client";
-
-import { useState } from "react";
+import { AddContext } from "../app/page";
+import { useContext, useState } from "react";
 
 const Button = ({ task }) => {
-  const [data, setData] = useState();
+  const { task, setData } = useContext(AddContext);
 
   const handleAddTask = async (event) => {
     try {
