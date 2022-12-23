@@ -12,8 +12,12 @@
     "@next/font": "13.1.0",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.0",
+    "mongoose": "^6.8.1",
     "next": "13.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }
