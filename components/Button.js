@@ -1,21 +1,20 @@
 "use client";
-
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useTodoContext } from "../context/TodoProvider";
 
 const Button = () => {
-  // const [todo, setTodo] = useState();
-  const [data, setData] = useState();
   const { todo, setTodo } = useTodoContext();
+  const router = useRouter();
 
   const handleAddTask = async (event) => {
+    event.preventDefault();
     try {
       const response = await fetch("http://localhost:3000/api/todos", {
-        body: todo,
         method: "POST",
+        body: JSON.stringify({ name: todo }),
       });
-
-      setData(response.json);
+      router.refresh();
+      setTodo("");
     } catch (error) {
       console.log("catch toolbar>>", error);
     }
