@@ -3,6 +3,7 @@ import { Schema, models, model } from "mongoose";
 const todo = new Schema({
   name: String,
   data: Object,
+  isDone: Boolean,
 });
 
 const Todo = models.Todo || model("Todo", todo);

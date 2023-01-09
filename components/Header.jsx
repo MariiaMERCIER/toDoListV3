@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import logo from "../assets/images/27b9e386375ebde43a9b022ba6c9d727.png";
 

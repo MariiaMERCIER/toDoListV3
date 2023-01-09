@@ -1,23 +1,22 @@
 "use client";
 
-import { useContext, useState } from "react";
-import { AddContext } from "../app/page";
+import { useTodoContext } from "../context/TodoProvider";
+
 import Button from "./Button";
 
 const ToolBar = () => {
-  const { task, setTask } = useContext(AddContext);
+  const { todo, setTodo } = useTodoContext();
   return (
     <>
       <input
         type="text"
-        value={task}
+        value={todo}
         placeholder="Tape your task...."
         onChange={(event) => {
           event.preventDefault();
-          setTask(event.target.value);
+          setTodo(event.target.value);
         }}
       />
-      <Button task={task} />
     </>
   );
 };
