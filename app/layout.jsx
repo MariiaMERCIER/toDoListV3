@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
@@ -10,10 +9,7 @@ export default function RootLayout({ children }) {
       */}
       <head />
 
-      <body>
-        <Header />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
