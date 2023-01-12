@@ -4,12 +4,10 @@ import Todo from "../../../models/Todo";
 const handler = async (req, res) => {
   if (req.method === "POST") {
     const body = JSON.parse(req.body);
-    console.log(body);
+
     const today = new Date();
 
     const newDate = today.toLocaleString();
-
-    console.log(newDate);
 
     try {
       const newTask = new Todo({

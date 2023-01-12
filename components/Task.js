@@ -1,18 +1,20 @@
 "use client";
+import { useState } from "react";
+import useThemeContext from "../context/ThemeProvider";
 import { useRouter } from "next/navigation";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { useCallback, useState } from "react";
 library.add(faTrash);
 
 const Task = ({ task }) => {
   const [done, setDone] = useState(false);
+  const { setTheme, theme } = useThemeContext();
 
   const router = useRouter();
 
-  const handleDelete = useCallback(async (id) => {
+  const handleDelete = async (id) => {
     try {
       await fetch(`http://localhost:3000/api/todos/${id}`, {
         method: "DELETE",
@@ -22,9 +24,9 @@ const Task = ({ task }) => {
     } catch (error) {
       console.log("catchDeleteTesk>>", error);
     }
-  }, []);
+  };
 
-  const handleChecked = useCallback(async (event, id) => {
+  const handleChecked = async (event, id) => {
     event.preventDefault();
 
     try {
@@ -36,19 +38,24 @@ const Task = ({ task }) => {
     } catch (error) {
       console.log("catchUpdateTesk>>", error.reponse);
     }
-  }, []);
+  };
 
   return (
-    <div>
+    <div className="flex gap-x-5 ">
       <input
+        className="checked:bg-green-500"
         type="checkbox"
         checked={task.isDone}
         onChange={(event) => {
           handleChecked(event, task._id);
         }}
       />
-      <p>{task.data}</p>
-      <p>{task.name}</p>
+      <p className={`text-base  ${theme ? "text-black" : "text-white"}`}>
+        {task.data}
+      </p>
+      <p className={`text-base ${theme ? "text-black" : "text-white"}`}>
+        {task.name}
+      </p>
       <div
         onClick={() => {
           handleDelete(task._id);
@@ -56,7 +63,7 @@ const Task = ({ task }) => {
       >
         <FontAwesomeIcon
           icon="fa-trash"
-          style={{ fontSize: 15, color: "white" }}
+          className={`text-base ${theme ? "text-black" : "text-white"}`}
         />
       </div>
     </div>
