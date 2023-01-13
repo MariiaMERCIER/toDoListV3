@@ -10,7 +10,7 @@ library.add(faTrash);
 
 const Task = ({ task }) => {
   const [done, setDone] = useState(false);
-  const { setTheme, theme } = useThemeContext();
+  const { theme } = useThemeContext();
 
   const router = useRouter();
 

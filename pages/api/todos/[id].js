@@ -1,4 +1,3 @@
-import next from "next";
 import connectDB from "../../../middlewares/connectDB";
 import Todo from "../../../models/Todo";
 
