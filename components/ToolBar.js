@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 import useThemeContext from "../context/ThemeProvider";
+
 import AddTask from "../components/AddTask";
 import Task from "../components/Task";
 import Header from "./Header";
-
 import Footer from "./Footer";
 
 const Toolbar = ({ data }) => {
