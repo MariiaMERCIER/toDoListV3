@@ -14,12 +14,19 @@ async function getData() {
 }
 
 export default async function Home() {
-  const data = await getData();
-  return (
-    <main>
-      <ThemeProvider>
-        <Toolbar data={data} />
-      </ThemeProvider>
-    </main>
-  );
+  let data;
+
+  try {
+    data = await getData();
+
+    return (
+      <main>
+        <ThemeProvider>
+          <Toolbar data={data} />
+        </ThemeProvider>
+      </main>
+    );
+  } catch (error) {
+    console.log(error.message);
+  }
 }
