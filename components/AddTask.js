@@ -2,14 +2,16 @@
 
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
-import useThemeContext from "../context/ThemeProvider";
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 
-const AddTask = () => {
-  const { theme } = useThemeContext();
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+library.add(faCheck);
 
+const AddTask = () => {
   const todo = useRef(null);
   const router = useRouter();
 
@@ -36,7 +38,7 @@ const AddTask = () => {
   return (
     <>
       <input
-        className="w-96 focus:border-purple-900 mb-4 mt-4"
+        className="w-96 pl-2.5 h-12 rounded-lg  focus:border-purple-900 mb-4 mt-4"
         type="text"
         ref={todo}
         placeholder="Tape your task...."
@@ -45,7 +47,7 @@ const AddTask = () => {
         className="text-2xl bg-purple-900 text-white w-52 h-12 rounded-lg mb-2"
         onClick={handleAddTask}
       >
-        Add task
+        Add task <FontAwesomeIcon icon="check" className="text-green-500" />
       </button>
 
       <ToastContainer />

@@ -1,18 +1,19 @@
 "use client";
 
-import useThemeContext from "../context/ThemeProvider";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
+library.add(faFilter);
 
 const BtnSort = ({ sort, setSort }) => {
-  const { setTheme, theme } = useThemeContext();
-
   return (
     <button
-      className="text-2xl bg-purple-900 text-white w-52 h-12 rounded-lg"
       onClick={() => {
         setSort(!sort);
       }}
     >
-      {sort ? "Unsort" : "Sort"}
+      {"  "}{" "}
+      <FontAwesomeIcon icon="filter" className="text-purple-900 text-2xl" />
     </button>
   );
 };

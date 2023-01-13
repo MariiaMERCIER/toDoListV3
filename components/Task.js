@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import useThemeContext from "../context/ThemeProvider";
 import { useRouter } from "next/navigation";
+import useThemeContext from "../context/ThemeProvider";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";

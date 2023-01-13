@@ -1,6 +1,5 @@
 import { ThemeProvider } from "../context/ThemeProvider";
 
-import Header from "../components/Header";
 import Toolbar from "../components/ToolBar";
 
 async function getData() {
@@ -13,10 +12,7 @@ export default async function Home() {
 
   return (
     <ThemeProvider>
-      <div className=" min-h-screen">
-        <Header />
-        <Toolbar data={data} />
-      </div>
+      <Toolbar data={data} />
     </ThemeProvider>
   );
 }
