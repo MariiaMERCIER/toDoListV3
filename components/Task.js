@@ -16,7 +16,7 @@ const Task = ({ task }) => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:3000/api/todos/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${id}`, {
         method: "DELETE",
       });
 
@@ -30,7 +30,7 @@ const Task = ({ task }) => {
     event.preventDefault();
 
     try {
-      await fetch(`http://localhost:3000/api/todos/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${id}`, {
         method: "PUT",
       });
       setDone(true);
