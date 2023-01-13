@@ -16,15 +16,14 @@ async function getData() {
 export default async function Home() {
   try {
     const data = await getData();
+    return (
+      <main>
+        <ThemeProvider>
+          <Toolbar data={data} />
+        </ThemeProvider>
+      </main>
+    );
   } catch (error) {
     console.log(error.message);
   }
-
-  return (
-    <main>
-      <ThemeProvider>
-        <Toolbar data={data} />
-      </ThemeProvider>
-    </main>
-  );
 }
