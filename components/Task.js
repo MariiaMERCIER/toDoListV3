@@ -16,7 +16,7 @@ const Task = ({ task }) => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${id}`, {
         method: "DELETE",
       });
 
@@ -30,7 +30,7 @@ const Task = ({ task }) => {
     event.preventDefault();
 
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${id}`, {
         method: "PUT",
       });
       setDone(true);

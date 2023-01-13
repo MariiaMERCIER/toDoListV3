@@ -21,7 +21,7 @@ const AddTask = () => {
 
     if (todo.current.value) {
       try {
-        const response = await fetch("http://localhost:3000/api/todos", {
+        const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL, {
           method: "POST",
           body: JSON.stringify({ name: todo.current.value }),
         });
