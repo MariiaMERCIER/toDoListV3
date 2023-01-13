@@ -12,7 +12,11 @@ async function getData() {
 }
 
 export default async function Home() {
-  const data = await getData();
+  try {
+    const data = await getData();
+  } catch (error) {
+    console.log(error.message);
+  }
 
   return (
     <main>
