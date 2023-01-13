@@ -12,7 +12,9 @@ const Toolbar = ({ data }) => {
   const [sort, setSort] = useState(false);
 
   const dataFilterDone = data.filter((done) => done.isDone === true);
+
   const dataFilterUndone = data.filter((undone) => undone.isDone === false);
+
   return (
     <div className={`${theme ? "bg-white" : "bg-black"}`}>
       <Header sort={sort} setSort={setSort} />
@@ -39,14 +41,18 @@ const Toolbar = ({ data }) => {
         {sort ? (
           <div className="gap-x-3">
             <div className="flex ">
-              {" "}
-              <h2
-                className={`text-3xl  mb-4  ${
-                  theme ? "text-black" : "text-white"
-                }`}
-              >
-                Task to do
-              </h2>{" "}
+              <div>
+                <h2
+                  className={`text-3xl  mb-4  ${
+                    theme ? "text-black" : "text-white"
+                  }`}
+                >
+                  Task to do
+                </h2>
+                {dataFilterUndone.length === 0 && (
+                  <p className="text-l text-gray-500">No task to do...</p>
+                )}
+              </div>
             </div>
             {dataFilterUndone.map((task, index) => {
               return (
@@ -55,13 +61,18 @@ const Toolbar = ({ data }) => {
                 </div>
               );
             })}
-            <h2
-              className={`text-3xl mb-4 mt-2 ${
-                theme ? "text-black" : "text-white"
-              }`}
-            >
-              Task done
-            </h2>
+            <div>
+              <h2
+                className={`text-3xl mb-4 mt-2 ${
+                  theme ? "text-black" : "text-white"
+                }`}
+              >
+                Task done
+              </h2>
+              {dataFilterDone.length === 0 && (
+                <p className="text-l text-gray-500">No task done...</p>
+              )}
+            </div>
             {dataFilterDone.map((task, index) => {
               return (
                 <div key={index}>
@@ -73,14 +84,19 @@ const Toolbar = ({ data }) => {
         ) : (
           <div className="gap-x-3">
             <div className="flex justify-between">
-              {" "}
-              <h2
-                className={`text-3xl mb-4 ${
-                  theme ? "text-black" : "text-white"
-                }`}
-              >
-                All tasks
-              </h2>{" "}
+              <div>
+                {" "}
+                <h2
+                  className={`text-3xl mb-4 ${
+                    theme ? "text-black" : "text-white"
+                  }`}
+                >
+                  All tasks
+                </h2>
+                {data.length === 0 && (
+                  <p className="text-l text-gray-500">No task to do...</p>
+                )}
+              </div>
             </div>
             {data.map((task, index) => {
               return (
