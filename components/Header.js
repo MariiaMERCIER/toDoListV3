@@ -15,7 +15,7 @@ const Header = ({ sort, setSort }) => {
       mx-auto pl-5 w-3/5	 justify-between ${theme ? "bg-white" : "bg-black"}`}
     >
       <div className="flex items-end  ">
-        <Image src={logo} alt="logo" width={120} />
+        {/* <Image src={logo} alt="logo" width={120} /> */}
         <h1
           className={`font-comic font-bold text-2xl mb-5 ml-1 ${
             theme ? "text-black" : "text-white"
