@@ -4,7 +4,7 @@ import Toolbar from "../components/ToolBar";
 
 async function getData() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/todos/`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/todos/`);
     return res.json();
   } catch (error) {
     console.log(error.message);
@@ -15,6 +15,7 @@ export default async function Home() {
   let data;
   try {
     data = await getData();
+    console.log(data);
   } catch (error) {
     console.log(error.message);
   }

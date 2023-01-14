@@ -22,7 +22,7 @@ const AddTask = () => {
     if (todo.current.value) {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_URL}api/todos/`,
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/todos/`,
           {
             method: "POST",
             body: JSON.stringify({ name: todo.current.value }),
