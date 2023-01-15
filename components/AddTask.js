@@ -16,7 +16,6 @@ const AddTask = () => {
   const router = useRouter();
 
   const handleAddTask = async (event) => {
-    console.log(event);
     event.preventDefault();
     todo.current.focus();
 

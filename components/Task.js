@@ -15,7 +15,6 @@ const Task = ({ task }) => {
   const router = useRouter();
 
   const handleDelete = async (id) => {
-    console.log(id);
     try {
       await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/todos/${id}`, {
         method: "DELETE",
@@ -28,7 +27,6 @@ const Task = ({ task }) => {
   };
 
   const handleChecked = async (event, id) => {
-    console.log(id);
     event.preventDefault();
 
     try {
