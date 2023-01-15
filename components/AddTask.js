@@ -17,7 +17,6 @@ const AddTask = () => {
 
   const handleAddTask = async (event) => {
     event.preventDefault();
-    todo.current.focus();
 
     if (todo.current.value) {
       try {
@@ -28,7 +27,7 @@ const AddTask = () => {
             body: JSON.stringify({ name: todo.current.value }),
           }
         );
-
+        todo.current.value = "";
         router.refresh();
       } catch (error) {
         console.log("catch toolbar>>", error.message);
