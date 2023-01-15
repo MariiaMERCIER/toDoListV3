@@ -14,7 +14,7 @@
 
 ### General info
 
-This projet allow you to add, modify and remove tasks. It can help you to organise better you job time and daily problemes. You can also change the color of the fond and filter your tasks.
+This projet allow you to add, modify and remove tasks. It can help you to organise better you job time and daily problemes. You can also change the screen color and you can filter your tasks.
 
 ### Technologies
 
@@ -25,7 +25,6 @@ Project is create with:
 * Tailwind
 * MongoBD
 
-You can start editing the page by modifying `app/page.jsx`. The page auto-updates as you edit the file.
 
 Used: 
 
