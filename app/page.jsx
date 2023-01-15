@@ -12,13 +12,8 @@ async function getData() {
 }
 
 export default async function Home() {
-  let data;
-  try {
-    data = await getData();
-    console.log(data);
-  } catch (error) {
-    console.log(error.message);
-  }
+  const data = await getData();
+
   return (
     <main>
       <ThemeProvider>
