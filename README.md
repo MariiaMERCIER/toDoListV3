@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 ## Getting Started
 
-First, run the development server:
+# Todo list - my first projet with Next.js 13
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Table of contents
+
+* General info
+* Technologies
+* Setup
+
+### General info
+
+This projet allow you to add, modify and remove tasks. It can help you to organise better you job time and daily problemes. You can also change the color of the fond and filter your tasks.
+
+### Technologies
+
+Project is create with:
+
+* Next js
+* React js
+* Tailwind
+* MongoBD
 
 You can start editing the page by modifying `app/page.jsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Used: 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+* Fetch
+* FontAwesomeIcon
+* useHooks : useState, useRef, useContext, useRouter (next navigation)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+To run this project, install it locally with using
 
-To learn more about Next.js, take a look at the following resources:
+```
+$ yarn 
+$ yarn dev
+```
+Screens: 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<img width="48%" alt="Capture d’écran 2023-01-14 à 11 28 35" src="https://user-images.githubusercontent.com/102726399/212566203-c8755c3c-7b72-4a3a-a203-3ee260c70bf3.png">&nbsp;&nbsp;<img width="48%" alt="Capture d’écran 2023-01-14 à 11 30 02" src="https://user-images.githubusercontent.com/102726399/212566303-97ffa8b5-4328-4c7b-b04e-b1190a599ac9.png">&nbsp;&nbsp;<img width="48%" alt="Capture d’écran 2023-01-14 à 11 29 56" src="https://user-images.githubusercontent.com/102726399/212566230-8a817faf-6e09-4f3b-b423-31c22c9f50ad.png">&nbsp;&nbsp;<img width="48%" alt="Capture d’écran 2023-01-13 à 22 54 34" src="https://user-images.githubusercontent.com/102726399/212566258-c133a651-54f4-4097-b55e-a7a9cf372494.png">&nbsp;&nbsp;<img width="48%" alt="Capture d’écran 2023-01-14 à 11 30 08" src="https://user-images.githubusercontent.com/102726399/212566248-baad09f0-16e3-4f15-ac2d-8103590cc218.png">&nbsp;&nbsp;<img width="48%" alt="Capture d’écran 2023-01-14 à 11 30 11" src="https://user-images.githubusercontent.com/102726399/212566255-903349a6-871f-4013-8e67-432d74770fa6.png">
