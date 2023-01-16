@@ -19,6 +19,7 @@ const AddTask = () => {
     event.preventDefault();
 
     if (todo.current.value) {
+      console.log("INPUT", todo.current.value);
       try {
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_BASE_URL}/api/todos`,
