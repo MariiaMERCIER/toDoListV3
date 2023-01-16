@@ -18,6 +18,7 @@ const Toolbar = ({ data }) => {
   return (
     <div className={`${theme ? "bg-white" : "bg-black"}`}>
       <Header sort={sort} setSort={setSort} />
+
       <div
         className={`min-h-screen flex flex-col font-comic my-0
       mx-auto pl-5 w-3/5 ${theme ? "bg-white" : "bg-black"}`}
