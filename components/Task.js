@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-// import useThemeContext from "../context/ThemeProvider";
+import useThemeContext from "../context/ThemeProvider";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -10,7 +10,7 @@ library.add(faTrash);
 
 const Task = ({ task }) => {
   const [done, setDone] = useState(false);
-  // const { theme } = useThemeContext();
+  const { theme } = useThemeContext();
 
   const router = useRouter();
 
@@ -51,22 +51,21 @@ const Task = ({ task }) => {
           handleChecked(event, task._id);
         }}
       />
-      {/* <p className={`text-base  ${theme ? "text-black" : "text-white"}`}>
+      <p className={`text-base  ${theme ? "text-black" : "text-white"}`}>
         {task.data}
-      </p> */}
-      {/* <p className={`text-base ${theme ? "text-black" : "text-white"}`}>
+      </p>
+      <p className={`text-base ${theme ? "text-black" : "text-white"}`}>
         {task.name}
-      </p> */}
+      </p>
       <div
         onClick={() => {
           handleDelete(task._id);
         }}
       >
-        <p>Delete</p>
-        {/* <FontAwesomeIcon
+        <FontAwesomeIcon
           icon="fa-trash"
           className={`text-base ${theme ? "text-black" : "text-white"}`}
-        /> */}
+        />
       </div>
     </div>
   );

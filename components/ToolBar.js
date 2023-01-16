@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-// import useThemeContext from "../context/ThemeProvider";
+import useThemeContext from "../context/ThemeProvider";
 
 import AddTask from "../components/AddTask";
 import Task from "../components/Task";
@@ -8,7 +8,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 const Toolbar = ({ data }) => {
-  // const { theme } = useThemeContext();
+  const { theme } = useThemeContext();
   const [sort, setSort] = useState(false);
 
   const dataFilterDone = data.filter((done) => done.isDone === true);
@@ -16,16 +16,15 @@ const Toolbar = ({ data }) => {
   const dataFilterUndone = data.filter((undone) => undone.isDone === false);
 
   return (
-    <div>
-      {/* <div className={`${theme ? "bg-white" : "bg-black"}`}> */}
+    <div className={`${theme ? "bg-white" : "bg-black"}`}>
       <Header sort={sort} setSort={setSort} />
-      <div>
-        {/* <div
+
+      <div
         className={`min-h-screen flex flex-col font-comic my-0
       mx-auto pl-5 w-3/5 ${theme ? "bg-white" : "bg-black"}`}
-      > */}
+      >
         <div>
-          {/* <p className={`mb-4 ${theme ? "text-black" : "text-white"}`}>
+          <p className={`mb-4 ${theme ? "text-black" : "text-white"}`}>
             YOU HAVE{" "}
             <span className="font-bold text-orange-400">{data.length}</span>{" "}
             TASKS IN YOUR TODO LIST {"   "}
@@ -38,7 +37,7 @@ const Toolbar = ({ data }) => {
               {dataFilterUndone.length}
             </span>{" "}
             IS <span className="font-bold text-orange-400">TO DO</span>.
-          </p> */}
+          </p>
         </div>
         {sort ? (
           <div className="gap-x-3">
@@ -88,13 +87,13 @@ const Toolbar = ({ data }) => {
             <div className="flex justify-between">
               <div>
                 {" "}
-                {/* <h2
+                <h2
                   className={`text-3xl mb-4 ${
                     theme ? "text-black" : "text-white"
                   }`}
                 >
                   All tasks
-                </h2> */}
+                </h2>
                 {data.length === 0 && (
                   <p className="text-l text-gray-500">No task to do...</p>
                 )}
