@@ -4,9 +4,12 @@ import Toolbar from "../components/ToolBar";
 
 async function getData() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/todos`, {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/todos`
+      //  {
+      //   cache: "no-store",
+      // }
+    );
 
     return res.json();
   } catch (error) {
